@@ -9,6 +9,10 @@ fs.mkdir('./04-copy-directory/files-copy', function() {
 
         files.forEach(file =>{    
             fs.stat(`./04-copy-directory/files/${file}`, (err, stats) => {
+                if(err){
+                    console.log(err);
+                };
+                
                 if(stats.size == 0){
                     let newFile = fs.WriteStream(`./04-copy-directory/files/${file}`);
                     newFile.write("");
