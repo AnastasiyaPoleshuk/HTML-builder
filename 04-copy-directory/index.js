@@ -1,6 +1,5 @@
 let fs = require('fs');
 
-
 fs.mkdir('./04-copy-directory/files-copy', function() {
     fs.readdir('./04-copy-directory/files', (err, files) => {
         if(err){
